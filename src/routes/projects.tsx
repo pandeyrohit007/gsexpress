@@ -17,7 +17,7 @@ const projectImageOverrides: Record<string, string> = {
 };
 
 export const Route = createFileRoute("/projects")({
-  validateSearch: (search: Record<string, unknown>) => ({
+  validateSearch: (search: Record<string, unknown>): { category?: string } => ({
     category: typeof search.category === "string" ? search.category : undefined,
   }),
   head: () => ({
